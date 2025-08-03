@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Install nginx and add custom header X-Served-By with server hostname
+
+apt-get update -y
+apt-get install nginx -y
+
+# Insert the add_header directive in the http block only once
+if ! grep -q 'add_header X-Served-By' /etc/nginx/nginx.conf; then
+  sed -i '/http {/a \    add_header X-Served-By $hostname;' /etc/nginx/nginx.conf
+fi
+
+service nginx restart
+
