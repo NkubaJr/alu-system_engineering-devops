@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
-## Install nginx and configure homepage with exact required content
+## Install nginx and set up a custom page
 #
-#apt-get update -y
-#apt-get install nginx -y
+## Install nginx silently
+apt-get update -y
+apt-get install nginx -y
 #
-#echo "Holberton School" > /var/www/html/index.html
+## Make sure Nginx is running
+service nginx start
 #
-#service nginx restart
+## Replace the default page content with required string
+echo 'Holberton School for the win!' > /var/www/html/index.nginx-debian.html
+#
+## Done!
 #
