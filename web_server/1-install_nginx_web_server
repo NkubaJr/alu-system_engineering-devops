@@ -9,7 +9,7 @@ apt-get install nginx -y
 service nginx start
 #
 ## Replace the default page content with required string
-echo 'Holberton School for the win!' > /var/www/html/index.nginx-debian.html
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
 #
 ## Done!
 #
