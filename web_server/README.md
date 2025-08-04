@@ -1,1 +1,1 @@
-Web server let hit it
+configuration of domain and webserver
